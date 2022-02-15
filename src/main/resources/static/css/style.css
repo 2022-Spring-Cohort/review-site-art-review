@@ -5,10 +5,10 @@ grid-template-areas:
 'painter painter painter'
 'footer footer footer';
 gap: 1em;
+background-color: antiquewhite;
 }
 
 .container > div{
-    background-color: antiquewhite;
     border-radius: 10px;
 }
 .header{
@@ -27,6 +27,10 @@ gap: 1em;
     border: 2px solid black;
     border-radius: 10px;
     margin: 5px;
+    list-style: none;
+}
+.monet: hover {
+    opacity: 0.7;
 }
 .name{
     text-align: center;
@@ -41,4 +45,18 @@ gap: 1em;
 .footer{
     grid-area: footer;
     text-align: center;
+}
+
+.painting1{
+    justify-content: space-around;
+    margin: 10px;
+}
+    
+
+.painting{
+    height: 5in;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    border-radius: 10px;
 }
