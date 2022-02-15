@@ -4,12 +4,17 @@ grid-template-areas:
 'header header header'
 'painter painter painter'
 'footer footer footer';
-gap: 1em;
-background-color: antiquewhite;
+gap: 10px;
 }
 
 .container > div{
     border-radius: 10px;
+    background-color: antiquewhite;
+}
+.container > ul{
+    background-color: antiquewhite;
+    border-radius: 10px;
+    
 }
 .header{
     grid-area: header;
@@ -29,9 +34,7 @@ background-color: antiquewhite;
     margin: 5px;
     list-style: none;
 }
-.monet: hover {
-    opacity: 0.7;
-}
+
 .name{
     text-align: center;
 }
@@ -59,4 +62,20 @@ background-color: antiquewhite;
     margin-left: auto;
     display: block;
     border-radius: 10px;
+}
+
+.reviewHead{
+    text-align: center;
+}
+.reviews{
+    display: flex;
+    flex-direction: row;
+}
+
+#images{
+    border-radius: 10px;
+    height: 6in;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
