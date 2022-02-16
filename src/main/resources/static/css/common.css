@@ -5,11 +5,12 @@ grid-template-areas:
 'main'
 'footer';
 gap: 10px;
+/* background-image: url("/images/background.jpg"); */
 }
 
 .container > div{
     border-radius: 10px;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 }
 .header{
     grid-area: header;
