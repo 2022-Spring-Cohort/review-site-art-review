@@ -5,7 +5,7 @@ grid-template-areas:
 'main'
 'footer';
 gap: 10px;
-/* background-image: url("/images/background.jpg"); */
+background-image: url("/images/background.jpg");
 }
 
 .container > div{

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/arts.css">
+    <title>Arts</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Path of 
+                Art</h1>
+        </div>
+        <div class="main">
+            <ul class="arts">
+                <li class="paint" th:each="painting:${artist.paintings}">
+                    <h3 class="name" th:text="${painting.title}">The Waterlily Pond</h3>
+                    <a href="painting.html"><img class="painting"
+                            th:src="${painting.imgUrl}"
+                            alt="picture by Waterlily by monet">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for visiting our page</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
