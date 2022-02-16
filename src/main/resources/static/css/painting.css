@@ -1,0 +1,25 @@
+.reviewtitle{
+    text-align: center;
+}
+
+.reviews{
+    display: flex;
+    flex-direction: row;
+}
+.image{
+    border-radius: 10px;
+    height: 6in;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+@media screen and (max-width: 600px){
+    .reviews{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 900px){
+  .image{
+      height: 3in;
+  }
+}
