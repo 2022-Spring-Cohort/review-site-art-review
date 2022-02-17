@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/painting.css">
+    <title>Painting</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Path of Art</h1>
+        </div>
+        <div class="main">
+            <h3 class="reviewtitle">Review</h3>
+            <h2 class="title" th:text="${painting.title}">name</h2>
+            <div class="reviews">
+                <img class="image" th:src="${painting.imgUrl}"
+                    alt="monets water lily">
+                <ul class="reviewinginfo">
+                    <li>
+                        <form th:action="'/artists/painting/' +${painting.id}" method = "POST">
+                            <label for="fname">First name:</label><br>
+                            <input type="text" id="fname" name="fname" placeholder="John"><br>
+                            <label for="lname">Last name:</label><br>
+                            <input type="text" id="lname" name="lname" placeholder="Doe"><br>
+                            <label for="review">Enter Comment Below</label><br>
+                            <textarea id="review" name="comment" rows="4" cols="50"></textarea><br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for visiting our page</p>
+        </div>
+    </div>
+</body>
+
+</html>

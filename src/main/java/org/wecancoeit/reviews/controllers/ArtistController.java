@@ -26,4 +26,7 @@ public class ArtistController {
         return"ArtistTemplate";
     }
 
+
+
+
 }

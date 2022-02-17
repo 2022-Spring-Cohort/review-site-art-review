@@ -24,8 +24,10 @@ public class Populator implements CommandLineRunner {
         Artist artist2 = new Artist("Picaso","/images/monet.jpg","another painter");
         artistRepo.save(artist2);
 
-        Painting painting1 = new Painting("Water lily","/images/the_water-liliy_pond__national_gallery__london_.jpg",artist1);
+        Painting painting1 = new Painting("The Waterlily Pond","/images/the_water-liliy_pond__national_gallery__london_.jpg",artist1);
         paintingRepo.save(painting1);
+        Painting painting2 = new Painting("Water lily","/images/the_water-liliy_pond__national_gallery__london_.jpg",artist1);
+        paintingRepo.save(painting2);
     }
 
 
