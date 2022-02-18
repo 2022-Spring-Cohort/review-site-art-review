@@ -11,22 +11,19 @@ public class Painting {
     private Long id;
     private String title;
     private String imgUrl;
+    private int ratingCount;
+    private double averageRating;
 
     @ManyToOne
     private Artist artist;
 
-    @ElementCollection
-    private Collection<String> comments;
-
-    @ElementCollection
-    private Collection<Integer> ratings;
+    @OneToMany(mappedBy="painting")
+    private Collection<Review> reviews;
 
     public Painting(String title, String imgUrl, Artist artist) {
         this.title = title;
         this.imgUrl = imgUrl;
         this.artist = artist;
-        this.comments = new ArrayList<String>();
-        this.ratings = new ArrayList<Integer>();
     }
 
     public Painting() {
@@ -44,23 +41,27 @@ public class Painting {
         return imgUrl;
     }
 
+    public int getRatingCount() {
+        return ratingCount;
+    }
+
+    public double getAverageRating() {
+        return averageRating;
+    }
+
     public Artist getArtist() {
         return artist;
     }
 
-    public Collection<String> getComments() {
-        return comments;
+    public Collection<Review> getReviews() {
+        return reviews;
     }
 
-    public Collection<Integer> getRatings() {
-        return ratings;
+    public void setRatingCount(int ratingCount) {
+        this.ratingCount = ratingCount;
     }
 
-    public void addRating(int rating){
-        ratings.add(rating);
-    }
-
-    public void addComment(String comment){
-        comments.add(comment);
+    public void setAverageRating(double averageRating) {
+        this.averageRating = averageRating;
     }
 }

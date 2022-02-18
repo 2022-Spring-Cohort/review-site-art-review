@@ -23,13 +23,13 @@
                     alt="monets water lily">
                 <ul class="reviewinginfo">
                     <li>
-                        <form th:action="'/artists/painting/' +${painting.id}" method = "POST">
-                            <label for="fname">First name:</label><br>
-                            <input type="text" id="fname" name="fname" placeholder="John"><br>
-                            <label for="lname">Last name:</label><br>
-                            <input type="text" id="lname" name="lname" placeholder="Doe"><br>
-                            <label for="review">Enter Comment Below</label><br>
-                            <textarea id="review" name="comment" rows="4" cols="50"></textarea><br>
+                        <form th:action="'/painting/' +${painting.id}" method = "POST">
+                            <label for="name">Full name:</label><br>
+                            <input type="text" id="name" name="name" placeholder="John Doe"><br>
+                            <label for="comment">Enter Comment Below</label><br>
+                            <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
+                            <label for="rating">Rate The Painting</label><br>
+                            <input id="rating" name="rating"></input><br>
                             <input type="submit" value="Submit">
                         </form>
                     </li>
