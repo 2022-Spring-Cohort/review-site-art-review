@@ -33,7 +33,7 @@ public class Populator implements CommandLineRunner {
         Artist artist4 = new Artist("Paul Cezanne","/images/paul-cezanne_photo.jpg","another painter");
         artistRepo.save(artist4);
 
-        Artist artist5 = new Artist("Pierre August Renoir","/images/pierre_auguste_renoir_photo.jpg","another painter");
+        Artist artist5 = new Artist("Pierre August Renoir","/images/renoir_photo.jpg","another painter");
         artistRepo.save(artist5);
 
         // PAINTINGS FOR CLAUD MONET - ARTIST 1:
