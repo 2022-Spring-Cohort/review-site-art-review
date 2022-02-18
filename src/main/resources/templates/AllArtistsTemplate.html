@@ -20,8 +20,10 @@
             <ul class="painterscontainer">
                 <li class="painter" th:each ="artist: ${artists}">
                     <h3 class="name" th:text = "${artist.name}">Claude Monet</h3>
-                    <a th:href="'/artists/' + ${artist.id}"><img class="portrait"  th:src="${artist.imgUrl}"
-                            th:alt="${artist.details}"></a>
+                    <a th:href="'/artists/' + ${artist.id}"><img class="portrait" th:src="${artist.imgUrl}"
+                        th:alt=" 'Photo of: ' + ${artist.name}">
+                    </a>
+                    <h3 class="name" th:text="${artist.details}"></h3>
                 </li>
             </ul>
         </div>

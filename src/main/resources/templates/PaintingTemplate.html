@@ -14,30 +14,28 @@
     <div class="container">
         <div class="header">
             <h1>Path of Art</h1>
-        </div>
+    </div>
         <div class="main">
             <h3 class="reviewtitle">Review</h3>
-            <h2 class="title" th:text="${painting.title}">name</h2>
+            <h2 class="title" th:text="${painting.title}"></h2>
             <div class="reviews">
                 <img class="image" th:src="${painting.imgUrl}"
-                    alt="monets water lily">
+                     th:alt="${painting.title}">
                 <ul class="reviewinginfo">
                     <li>
-                        <form th:action="'/painting/' +${painting.id}" method = "POST">
-                            <label for="name">Full name:</label><br>
+                        <form th:action="'/paintings/' +${painting.id}" method = "POST">
+                            <label for="name">Full Name:</label><br>
                             <input type="text" id="name" name="name" placeholder="John Doe"><br>
-                            <label for="comment">Enter Comment Below</label><br>
-                            <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
-                            <label for="rating">Rate The Painting</label><br>
-                            <input id="rating" name="rating"></input><br>
+                            <label for="review">Enter Comment Below</label><br>
+                            <textarea id="review" name="comment" rows="4" cols="50"></textarea><br>
+                            <label for="review">Rate the painting (1: did not like it, 5: loved it):</label><br>
+                            <input type="review" id="rating" name="rating"><br>
                             <input type="submit" value="Submit">
                         </form>
                     </li>
                 </ul>
-
-
             </div>
-        </div>
+    </div>
 
         <div class="footer">
             <p>Thank you for visiting our page</p>

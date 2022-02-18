@@ -21,19 +21,19 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Artist artist1 = new Artist("Claud Monet","/images/monet.jpg","a painter");
+        Artist artist1 = new Artist("Claud Monet","/images/monet.jpg","1840-1926");
         artistRepo.save(artist1);
 
-        Artist artist2 = new Artist("Edouard Manet","/images/edouard_manet_photo.jpg","another painter");
+        Artist artist2 = new Artist("Edouard Manet","/images/edouard_manet_photo.jpg","1832-1883");
         artistRepo.save(artist2);
 
-        Artist artist3 = new Artist("Henri Matisse","/images/henri_matisse_photo.jpg","another painter");
+        Artist artist3 = new Artist("Henri Matisse","/images/henri_matisse_photo.jpg","1869-1954");
         artistRepo.save(artist3);
 
-        Artist artist4 = new Artist("Paul Cezanne","/images/paul-cezanne_photo.jpg","another painter");
+        Artist artist4 = new Artist("Paul Cezanne","/images/paul-cezanne_photo.jpg","1839-1906");
         artistRepo.save(artist4);
 
-        Artist artist5 = new Artist("Pierre August Renoir","/images/pierre_auguste_renoir_photo.jpg","another painter");
+        Artist artist5 = new Artist("Pierre August Renoir","/images/renoir_photo.jpg","1841-1919");
         artistRepo.save(artist5);
 
         // PAINTINGS FOR CLAUD MONET - ARTIST 1:

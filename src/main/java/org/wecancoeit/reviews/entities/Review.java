@@ -15,11 +15,11 @@ public class Review {
     @ManyToOne
     private Painting painting;
 
-    public Review(String name, String comment, Double rating) {
-        this.name = name;
-        this.comment = comment;
-        this.rating = rating;
-    }
+//    public Review(String name, String comment, Double rating) {
+//        this.name = name;
+//        this.comment = comment;
+//        this.rating = rating;
+//    }
 
     public Review() {
     }
@@ -42,5 +42,17 @@ public class Review {
 
     public Double getRating() {
         return rating;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 }

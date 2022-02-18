@@ -19,10 +19,9 @@
         <div class="main">
             <ul class="arts">
                 <li th:each="painting:${artist.paintings}" class="paint">
-                    <h3 class="name" th:text="${painting.title}">The Waterlily Pond</h3>
+                    <h3 class="name" th:text="${painting.title}"></h3>
                     <a th:href="'/paintings/' + ${painting.id}"><img class="painting"
-                            th:src="${painting.imgUrl}"
-                            alt="picture by Waterlily by monet">
+                        th:src="${painting.imgUrl}" th:alt=" 'image of ' +  ${painting.title} + ' by ' + ${artist.name}">
                     </a>
                 </li>
             </ul>

@@ -27,12 +27,13 @@ public class PaintingController {
     }
 
     @PostMapping("/paintings/{id}")
-    public String addComment(@PathVariable long id, @ModelAttribute Review review, Model model){
+    public String addReview(Model model, @PathVariable long id, @ModelAttribute Review review){
         Painting painting = paintingRepo.findById(id).get();
         review.setPainting(painting);
         reviewRepo.save(review);
         model.addAttribute("review", review);
         return "redirect:/paintings/" + id;
     }
+
 
 }
