@@ -1,6 +1,5 @@
 package org.wecancoeit.reviews.entities;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -27,11 +26,23 @@ public class Hashtag {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getHashtag() {
         return hashtag;
     }
 
+    public void setHashtag(String hashtag) {
+        this.hashtag = hashtag;
+    }
+
     public Painting getPainting() {
         return painting;
+    }
+
+    public void setPainting(Painting painting) {
+        this.painting = painting;
     }
 }

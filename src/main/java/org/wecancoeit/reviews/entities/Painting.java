@@ -21,7 +21,7 @@ public class Painting {
     @OneToMany(mappedBy="painting")
     private Collection<Review> reviews;
 
-    @OneToMany(mappedBy="hashtag")
+    @OneToMany(mappedBy="painting")
     private Collection<Hashtag> hashtags;
 
     public Painting(String title, String imgUrl, Artist artist) {

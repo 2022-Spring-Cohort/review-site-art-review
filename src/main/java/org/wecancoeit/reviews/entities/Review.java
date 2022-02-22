@@ -15,6 +15,11 @@ public class Review {
     @ManyToOne
     private Painting painting;
 
+    public Review(String name, String comment, float rating) {
+        this.name = name;
+        this.comment = comment;
+        this.rating = rating;
+    }
 
     public Review() {
     }
