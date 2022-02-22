@@ -12,13 +12,17 @@ public class Painting {
     private String title;
     private String imgUrl;
     private int ratingCount;
-    private double averageRating;
+    private float overallRating;
+    private float averageRating;
 
     @ManyToOne
     private Artist artist;
 
     @OneToMany(mappedBy="painting")
     private Collection<Review> reviews;
+
+    @OneToMany(mappedBy="hashtag")
+    private Collection<Hashtag> hashtags;
 
     public Painting(String title, String imgUrl, Artist artist) {
         this.title = title;
@@ -49,6 +53,14 @@ public class Painting {
         return averageRating;
     }
 
+    public float getOverallRating() {
+        return overallRating;
+    }
+
+    public void setOverallRating(float overallRating) {
+        this.overallRating = overallRating;
+    }
+
     public Artist getArtist() {
         return artist;
     }
@@ -57,11 +69,15 @@ public class Painting {
         return reviews;
     }
 
+    public Collection<Hashtag> getHashtags() {
+        return hashtags;
+    }
+
     public void setRatingCount(int ratingCount) {
         this.ratingCount = ratingCount;
     }
 
-    public void setAverageRating(double averageRating) {
+    public void setAverageRating(float averageRating) {
         this.averageRating = averageRating;
     }
 }

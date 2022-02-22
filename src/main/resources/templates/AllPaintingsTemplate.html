@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/arts.css">
-    <title>Arts</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/allpaintings.css">
+    <title>Paintings</title>
 </head>
 
 <body>
@@ -24,12 +24,10 @@
         </div>
 
         <div class="main">
-            <ul class="arts">
-                <li th:each="painting:${artist.paintings}" class="paint">
-                    <h3 class="name" th:text="${painting.title}"></h3>
-                    <a th:href="'/paintings/' + ${painting.id}"><img class="painting"
-                        th:src="${painting.imgUrl}" th:alt=" 'image of ' +  ${painting.title} + ' by ' + ${artist.name}">
-                    </a>
+            <ul class="paintingscontainer">
+                <li class="paintings" th:each="painting:${paintings}">
+                    <h2 class="name" th:text="${painting.title}"></h2>
+                    <a th:href="'/paintings/' +${painting.id}"><img class="portrait" th:src="${painting.imgUrl}"></a>
                 </li>
             </ul>
         </div>
@@ -38,7 +36,6 @@
             <h3> Path of Art, WCCI 2022</h3>
         </div>
     </div>
-
 </body>
 
 </html>

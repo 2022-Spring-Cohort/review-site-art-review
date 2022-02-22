@@ -10,16 +10,11 @@ public class Review {
     private Long id;
     private String name;
     private String comment;
-    private Double rating;
+    private float rating;
 
     @ManyToOne
     private Painting painting;
 
-//    public Review(String name, String comment, Double rating) {
-//        this.name = name;
-//        this.comment = comment;
-//        this.rating = rating;
-//    }
 
     public Review() {
     }
@@ -32,6 +27,10 @@ public class Review {
         this.painting = painting;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -40,7 +39,7 @@ public class Review {
         return comment;
     }
 
-    public Double getRating() {
+    public float getRating() {
         return rating;
     }
 
@@ -52,7 +51,8 @@ public class Review {
         this.comment = comment;
     }
 
-    public void setRating(Double rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
+
 }
