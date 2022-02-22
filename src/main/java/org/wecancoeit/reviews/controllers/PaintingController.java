@@ -22,6 +22,7 @@ public class PaintingController {
         this.paintingRepo = paintingRepo;
         this.reviewRepo = reviewRepo;
     }
+
     @GetMapping("/all-paintings")
     public String showAllPaintings(Model model) {
         model.addAttribute("paintings", paintingRepo.findAll());
