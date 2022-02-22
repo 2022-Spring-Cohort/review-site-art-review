@@ -4,7 +4,15 @@
 
 .reviews{
     display: flex;
+    /* flex-direction: row; */
+}
+.titleAndRating{
+    display: flex;
     flex-direction: row;
+}
+.avgRating{
+    margin-left: 10px;
+    margin-bottom: -10px;
 }
 .title{
     margin-left: 35px;
