@@ -6,17 +6,13 @@
     display: flex;
     /* flex-direction: row; */
 }
-.titleAndRating{
-    display: flex;
-    flex-direction: row;
-}
 .avgRating{
-    margin-left: 10px;
+    margin-left: 35px;
     margin-bottom: -10px;
 }
 .title{
     margin-left: 35px;
-    margin-bottom: -10px;
+    margin-bottom: -15px;
 }
 .image{
     border-radius: 10px;
@@ -26,6 +22,41 @@
 }
 .reviewinginfo{
     list-style-type:none;
+}
+.name{
+   margin-bottom: 2px;
+}
+#name{
+    margin-bottom: 5px;
+}
+.comment{
+    margin-bottom: 2px;
+}
+#comment{
+    margin-bottom: 5px;
+}
+.rating{
+    margin-bottom: 2px;
+}
+#rating{
+    margin-bottom: 5px;
+}
+
+.reviewName{
+    font-weight: bold;
+    margin-bottom: -12px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.hash{
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: bold;
+    
 }
 
 @media screen and (max-width: 600px){

@@ -5,13 +5,13 @@ grid-template-areas:
 'main'
 'footer';
 gap: 10px;
-
+flex:1;
 }
 
 .container > div{
     border-radius: 10px;
     background-color: rgb(229, 226, 226);
-    /* background-image: url("/images/background.jpg"); */
+    background-image: url("/images/background.jpg");
     background-size: cover;
     box-shadow: 3px 6px rgb(167, 161, 161);
 }
@@ -19,7 +19,7 @@ gap: 10px;
     grid-area: header;
     display: flex;
     flex-direction: row;
-    justify-content: center
+    justify-content: space-between;
 }
 
 .businessLogo{
@@ -30,16 +30,19 @@ gap: 10px;
 .button {
     border-radius: 10px;
     color: black;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
     margin: 4px 2px;
     cursor: pointer;
+    margin-top: 115px;
+    margin-right: 50px;
 }
 .button:hover{
     color: white;
+    background-color: rgb(31, 89, 175);
 }
 .main{
     grid-area: main;

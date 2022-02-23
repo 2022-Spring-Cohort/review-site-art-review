@@ -10,6 +10,7 @@ import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.PaintingRepository;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -47,6 +48,23 @@ public class PaintingController {
         return "redirect:/paintings/" + id;
     }
 
+    @GetMapping("/all-hashtags")
+    public String showAllHashtags(Model model) {
+        List<Hashtag> hashtags = (List<Hashtag>) hashtagRepo.findAll();
+        if(hashtags.size() > 0) {
+            model.addAttribute("hashtags", hashtags);
+            return "AllHashtagsTemplate";
+        }
+        return "redirect:/all-paintings";
+    }
+
+    @GetMapping("/hashtags/{id}")
+    public String seeHashtag(Model model, @PathVariable Long id){
+        Optional<Hashtag> optionalHash = hashtagRepo.findById(id);
+        model.addAttribute("hashtag", optionalHash.get());
+        return "HashtagTemplate";
+    }
+
     @PostMapping("/paintings/hashtags/{id}")
    public String addHashtag(Model model, @PathVariable Long id, @RequestParam String hashtag){
         Optional<Hashtag> optionalHash = hashtagRepo.findByHashtag(hashtag);
@@ -63,20 +81,7 @@ public class PaintingController {
         }
         model.addAttribute("hashtag",hashtag);
         return "redirect:/paintings/" + id;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
 
     private void saveAverageRating(Review review, Painting painting){
         int addRatingCount;

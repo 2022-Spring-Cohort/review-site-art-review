@@ -1,0 +1,46 @@
+.hashtagsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+ .hashtag1{
+    height: 8in;
+} 
+
+.hashtags{
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    list-style: none;
+    font-family: 'Bangers', cursive;
+    font-size: 126px;
+    color:black;
+
+}
+.hashtags a{
+    padding: 10px;
+}
+
+@media screen and (max-width: 700px){
+    .paintingsscontainer{
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+   .paintings{
+       width: 98%;
+       margin-left: -15px;
+   }
+   .portrait{
+       height: 2in;
+   }
+}
+
+
+
+
+
+
+
+
+
