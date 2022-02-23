@@ -12,16 +12,16 @@
 
 <body>
     <div class="container">
-            <div class="header">
-                <div class="logo">
-                    <a th:href="'/'"><img class="businessLogo" src="/images/businesslogo.png"></a>
-                </div>
-                <div class="buttons">
-                    <a th:href="'/'"><button class="button button1">Artists</button></a>
-                    <a th:href="'/all-paintings'"><button class="button button2">Paintings</button></a>
-                    <!--<a th:href=""><button class=" button button3">Reviews</button></a>-->
-                </div>
+        <div class="header">
+            <div class="logo">
+                <a th:href="'/'"><img class="businessLogo" src="/images/businesslogo.png"></a>
             </div>
+            <div class="buttons">
+                <a th:href="'/'"><button class="button button1">Artists</button></a>
+                <a th:href="'/all-paintings'"><button class="button button2">Paintings</button></a>
+                <a th:href="'/all-hashtags'"><button class=" button button3">Hashtags</button></a>
+            </div>
+        </div>
 
         <div class="main">
             <h1 class="reviewtitle">Review</h1>
@@ -39,7 +39,7 @@
                             <input required type="text" id="name" name="name" placeholder="John Doe"><br>
                             <label class="review" for="review">Enter Comment Below:</label><br>
                             <textarea required id="review" name="comment" rows="4" cols="50"></textarea><br>
-                            <label class="rating" for="review" placeholder="1: Hate it 5: Love it">Rate the painting:</label><br>
+                            <label class="rating" for="review">Rate the painting:</label><br>
                             <input required type="number" id="rating" name="rating"><br>
                             <input type="submit" value="Submit">
                         </form>
@@ -61,7 +61,7 @@
                 <input class="input submit" type="submit" value="Submit">
             </form>
             <div th:each="hashtag: ${painting.hashtags}">
-                <p  class="hash" th:text="${hashtag.hashtag}"></p>
+                <a class="hash" th:href="'/hashtags/' + ${hashtag.id}"  th:text="${hashtag.hashtag}"></a>
             </div>
         </div>
     </div>

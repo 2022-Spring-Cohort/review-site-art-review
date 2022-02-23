@@ -47,6 +47,19 @@ public class PaintingController {
         return "redirect:/paintings/" + id;
     }
 
+    @GetMapping("/all-hashtags")
+    public String showAllHashtags(Model model) {
+        model.addAttribute("hashtags", hashtagRepo.findAll());
+        return "AllHashtagsTemplate";
+    }
+
+    @GetMapping("/hashtags/{id}")
+    public String seeHashtag(Model model, @PathVariable Long id){
+        Optional<Hashtag> optionalHash = hashtagRepo.findById(id);
+        model.addAttribute("hashtag", optionalHash.get());
+        return "HashtagTemplate";
+    }
+
     @PostMapping("/paintings/hashtags/{id}")
    public String addHashtag(Model model, @PathVariable Long id, @RequestParam String hashtag){
         Optional<Hashtag> optionalHash = hashtagRepo.findByHashtag(hashtag);
@@ -63,7 +76,7 @@ public class PaintingController {
         }
         model.addAttribute("hashtag",hashtag);
         return "redirect:/paintings/" + id;
-    }
+        }
 
     private void saveAverageRating(Review review, Painting painting){
         int addRatingCount;

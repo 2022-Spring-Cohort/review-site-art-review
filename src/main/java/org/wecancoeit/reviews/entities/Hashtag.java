@@ -1,9 +1,8 @@
 package org.wecancoeit.reviews.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 public class Hashtag {
@@ -12,11 +11,12 @@ public class Hashtag {
     private long id;
     private String hashtag;
 
-    @ManyToOne
-    private Painting painting;
+    @ManyToMany
+    private Collection<Painting> paintings;
 
     public Hashtag(String hashtag) {
         this.hashtag = hashtag;
+        this.paintings = new ArrayList<>();
     }
 
     public Hashtag() {
@@ -38,11 +38,11 @@ public class Hashtag {
         this.hashtag = hashtag;
     }
 
-    public Painting getPainting() {
-        return painting;
+    public Collection<Painting> getPaintings() {
+        return paintings;
     }
 
     public void setPainting(Painting painting) {
-        this.painting = painting;
+        this.paintings.add(painting);
     }
 }
