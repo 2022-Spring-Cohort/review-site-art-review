@@ -10,6 +10,7 @@ import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.PaintingRepository;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -49,8 +50,12 @@ public class PaintingController {
 
     @GetMapping("/all-hashtags")
     public String showAllHashtags(Model model) {
-        model.addAttribute("hashtags", hashtagRepo.findAll());
-        return "AllHashtagsTemplate";
+        List<Hashtag> hashtags = (List<Hashtag>) hashtagRepo.findAll();
+        if(hashtags.size() > 0) {
+            model.addAttribute("hashtags", hashtags);
+            return "AllHashtagsTemplate";
+        }
+        return "redirect:/all-paintings";
     }
 
     @GetMapping("/hashtags/{id}")

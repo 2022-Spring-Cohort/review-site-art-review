@@ -60,8 +60,8 @@
                 <input class="input" id="hashtag" name="hashtag" placeholder="#Picaso"><br>
                 <input class="input submit" type="submit" value="Submit">
             </form>
-            <div th:each="hashtag: ${painting.hashtags}">
-                <a class="hash" th:href="'/hashtags/' + ${hashtag.id}"  th:text="${hashtag.hashtag}"></a>
+            <div class="hash" th:each="hashtag: ${painting.hashtags}">
+                <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.hashtag}"></a>
             </div>
         </div>
     </div>
