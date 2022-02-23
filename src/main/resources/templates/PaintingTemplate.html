@@ -24,31 +24,30 @@
             </div>
 
         <div class="main">
-            <h3 class="reviewtitle">Review</h3>
+            <h1 class="reviewtitle">Review</h1>
             <div class="titleAndRating">
                 <h2 class="title" th:text="${painting.title}"></h2>
-                <h2 class="avgRating" th:text="${painting.averageRating}"></h2>
+                <h3 class="avgRating" th:if="${painting.averageRating > 0}" th:text="'Avg rating: ' + ${painting.averageRating}"></h3>
             </div>
             <div class="reviews">
                 <img class="image" th:src="${painting.imgUrl}"
                      th:alt="${painting.title}">
                 <ul class="reviewinginfo">
-                    <li>
+                    <li class="reviewForms">
                         <form th:action="'/paintings/' +${painting.id}" method = "POST">
-                            <label for="name">Full Name:</label><br>
-                            <input type="text" id="name" name="name" placeholder="John Doe"><br>
-                            <label for="review">Enter Comment Below</label><br>
-                            <textarea id="review" name="comment" rows="4" cols="50"></textarea><br>
-                            <label for="review">Rate the painting (1: did not like it, 5: loved it):</label><br>
-                            <input type="number" id="rating" name="rating"><br>
+                            <label class="name" for="name" >Full Name:</label><br>
+                            <input required type="text" id="name" name="name" placeholder="John Doe"><br>
+                            <label class="review" for="review">Enter Comment Below:</label><br>
+                            <textarea required id="review" name="comment" rows="4" cols="50"></textarea><br>
+                            <label class="rating" for="review" placeholder="1: Hate it 5: Love it">Rate the painting:</label><br>
+                            <input required type="number" id="rating" name="rating"><br>
                             <input type="submit" value="Submit">
                         </form>
                     </li>
                     <li class="comments">
-                        <div class="singleComment" th:each="review: ${painting.reviews}">
-                            <p th:text="${review.name}"></p>
-                            <p th:text="${review.rating}"></p>
-                            <p th:text="${review.comment}"></p>
+                        <div class="singleComment" th:each="review: ${painting.reviews}" >
+                            <p class="reviewName" th:text="${review.name} + ' ' + ' [' + ${review.rating} + ']'" ></p>
+                            <p class="reviewComment" th:text=" '- ' + ${review.comment}"></p>
                         </div>
                     </li>
                 </ul>
@@ -59,10 +58,10 @@
             <form class="hashtagInput" th:action="'/paintings/hashtags/' +${painting.id}" method = "POST">
                 <label class="input" for="hashtag">Enter Hashtag: </label>
                 <input class="input" id="hashtag" name="hashtag" placeholder="#Picaso"><br>
-                <input class="input" type="submit" value="Submit">
+                <input class="input submit" type="submit" value="Submit">
             </form>
-            <div class="hash" th:each="hashtag: ${painting.hashtags}">
-                <p th:text="${hashtag.hashtag}"></p>
+            <div th:each="hashtag: ${painting.hashtags}">
+                <p  class="hash" th:text="${hashtag.hashtag}"></p>
             </div>
         </div>
     </div>

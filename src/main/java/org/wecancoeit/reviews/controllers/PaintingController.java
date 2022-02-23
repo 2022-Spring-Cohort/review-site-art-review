@@ -65,19 +65,6 @@ public class PaintingController {
         return "redirect:/paintings/" + id;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     private void saveAverageRating(Review review, Painting painting){
         int addRatingCount;
         float avgRating;
