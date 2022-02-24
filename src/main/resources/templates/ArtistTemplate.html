@@ -30,6 +30,7 @@
                     <a th:href="'/paintings/' + ${painting.id}"><img class="painting"
                         th:src="${painting.imgUrl}" th:alt=" 'image of ' +  ${painting.title} + ' by ' + ${artist.name}">
                     </a>
+                    <p th:text="${painting.description}"></p>
                 </li>
             </ul>
         </div>

@@ -14,6 +14,7 @@ public class Painting {
     private int ratingCount;
     private float overallRating;
     private float averageRating;
+    private String description;
 
     @ManyToOne
     private Artist artist;
@@ -24,10 +25,12 @@ public class Painting {
     @ManyToMany(mappedBy="paintings")
     private Collection<Hashtag> hashtags;
 
-    public Painting(String title, String imgUrl, Artist artist) {
+    public Painting(String title, String imgUrl, String description, Artist artist) {
         this.title = title;
         this.imgUrl = imgUrl;
+        this.description = description;
         this.artist = artist;
+
     }
 
     public Painting() {
@@ -44,6 +47,9 @@ public class Painting {
     public String getImgUrl() {
         return imgUrl;
     }
+
+    @Lob
+    public String getDescription() { return description; }
 
     public int getRatingCount() {
         return ratingCount;
