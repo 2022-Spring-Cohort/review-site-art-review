@@ -38,7 +38,8 @@ public class PaintingController {
     }
 
     @PostMapping("/paintings/{id}")
-    public String addReview(Model model, @PathVariable Long id, @RequestParam String name, @RequestParam String comment, @RequestParam float rating) {
+    public String addReview(Model model, @PathVariable Long id, @RequestParam String name,
+                            @RequestParam String comment, @RequestParam float rating) {
         Painting painting = paintingRepo.findById(id).get();
         Review review1 = new Review(name, comment, rating);
         review1.setPainting(painting);
