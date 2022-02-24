@@ -1,7 +1,6 @@
 package org.wecancoeit.reviews.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -14,6 +13,7 @@ public class Painting {
     private int ratingCount;
     private float overallRating;
     private float averageRating;
+    @Lob
     private String description;
 
     @ManyToOne
@@ -48,7 +48,6 @@ public class Painting {
         return imgUrl;
     }
 
-    @Lob
     public String getDescription() { return description; }
 
     public int getRatingCount() {
