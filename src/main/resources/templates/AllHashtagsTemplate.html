@@ -15,16 +15,7 @@
 
 <body>
     <div class="container">
-        <div th:replace="fragments.html::header">
-<!--            <div class="logo">-->
-<!--                <a th:href="'/'"><img class="businessLogo" src="/images/businesslogo.png"></a>-->
-<!--            </div>-->
-<!--            <div class="buttons">-->
-<!--                <a th:href="'/'"><button class="button button1">Artists</button></a>-->
-<!--                <a th:href="'/all-paintings'"><button class="button button2">Paintings</button></a>-->
-<!--                <a th:href="'/all-hashtags'"><button class=" button button3">Hashtags</button></a>-->
-<!--            </div>-->
-        </div>
+        <div th:replace="fragments.html::header"></div>
 
         <div class="main hashtag1">
             <ul class="hashtagsContainer">
@@ -34,9 +25,7 @@
             </ul>
         </div>
 
-        <div th:replace="fragments.html::footer">
-<!--            <h3>© Path of Art, WCCI 2022</h3>-->
-        </div>
+        <div th:replace="fragments.html::footer"></div>
     </div>
 </body>
 

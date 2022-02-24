@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancoeit.reviews.entities.Artist;
+import org.wecancoeit.reviews.entities.Hashtag;
 import org.wecancoeit.reviews.entities.Painting;
 import org.wecancoeit.reviews.repos.ArtistRepository;
+import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.PaintingRepository;
 
 import java.awt.*;
@@ -18,6 +20,8 @@ public class Populator implements CommandLineRunner {
     @Autowired
     private PaintingRepository paintingRepo;
 
+    @Autowired
+    private HashtagRepository hashtagRepo;
 
     @Override
     public void run(String... args) throws Exception {
@@ -232,6 +236,9 @@ public class Populator implements CommandLineRunner {
                         "a young woman and her younger sister seated outdoors with a small basket containing balls of wool. " +
                         "Over the railings of the terrace one can see shrubbery and foliage with the River Seine behind it. ",artist5);
         paintingRepo.save(painting25);
+
+        Hashtag hashtag = new Hashtag("#party", painting2);
+        hashtagRepo.save(hashtag);
 
     }
 
