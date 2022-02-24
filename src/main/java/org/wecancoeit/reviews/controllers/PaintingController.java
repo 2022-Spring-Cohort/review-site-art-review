@@ -10,6 +10,7 @@ import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.PaintingRepository;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -68,19 +69,22 @@ public class PaintingController {
 
     @PostMapping("/paintings/hashtags/{id}")
    public String addHashtag(Model model, @PathVariable Long id, @RequestParam String hashtag){
-        Optional<Hashtag> optionalHash = hashtagRepo.findByHashtag(hashtag);
+        String tempHashtag = checkHashTag(hashtag);
+        Optional<Hashtag> optionalHash = hashtagRepo.findByHashtag(tempHashtag);
 
         Painting painting = paintingRepo.findById(id).get();
         if(optionalHash.isPresent()){
-            optionalHash.get().setPainting(painting);
-            hashtagRepo.save(optionalHash.get());
+            if(!optionalHash.get().getPaintings().contains(painting)) {
+                optionalHash.get().setPainting(painting);
+                hashtagRepo.save(optionalHash.get());
+            }
         }
         else {
-            Hashtag hash = new Hashtag(hashtag);
+            Hashtag hash = new Hashtag(tempHashtag);
             hash.setPainting(painting);
             hashtagRepo.save(hash);
         }
-        model.addAttribute("hashtag",hashtag);
+        model.addAttribute("hashtag",tempHashtag);
         return "redirect:/paintings/" + id;
         }
 
@@ -104,6 +108,17 @@ public class PaintingController {
         paintingRepo.save(painting);
     }
 
+    private String checkHashTag(String hashtag) {
+        List<String> list = Arrays.asList(hashtag);
+        String result = String.join(",", list);
+        String tempHashtag = "";
+        if (hashtag.contains("#")) {
+            tempHashtag = hashtag;
+        } else {
+            tempHashtag = "#" + hashtag;
+        }
+        return tempHashtag;
+    }
 
 
 }
