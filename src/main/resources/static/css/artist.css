@@ -29,6 +29,22 @@
     text-align: center;
 }
 
+@media screen and (max-width: 700px){
+    .arts{ 
+        flex-direction: column;
+        flex-wrap: nowrap;
+    
+    }
+    .paint{
+        width: 98%;
+        margin-left: -15px;
+    }
+    .painting{
+        height: 2in;
+        padding: 5px;
+    }
+}
+
 
 
 

@@ -181,7 +181,7 @@ public class Populator implements CommandLineRunner {
                 "This oil on canvas is one of a number of landscape paintings completed by the famous artist " +
                         "Paul Cezanne (1839-1906) of a small French fishing village. L’Estaque is just west of Marseille. ",artist4);
         paintingRepo.save(painting18);
-        Painting painting19 = new Painting("La_Route_tournante_en_sous-bois ", "/images/cezanne_la_route_tournante_en_sous-bois.jpg",
+        Painting painting19 = new Painting("La Route Tournante en sous Bois ", "/images/cezanne_la_route_tournante_en_sous-bois.jpg",
                 "Curabitur commodo aliquet libero, sed lacinia orci ultricies eu. " +
                         "Mauris malesuada ullamcorper elit, ornare iaculis lacus auctor et. Aenean non laoreet arcu. " +
                         "Maecenas rhoncus leo velit, a ultrices mauris efficitur ut. Aliquam sagittis congue auctor. " +

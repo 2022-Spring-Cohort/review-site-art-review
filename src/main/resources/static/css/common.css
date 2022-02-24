@@ -26,19 +26,22 @@ flex:1;
     border-radius: 10px;
     height: 1.5in;
     margin: 10px;
+    margin-bottom: -4px;
+    margin-top: 0px;
+}
+.buttons {
+display: flex;
+flex-direction: row;
 }
 .button {
     border-radius: 10px;
-    color: black;
     padding: 5px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 18px;
-    margin: 4px 2px;
+    margin: 10px;
     cursor: pointer;
-    margin-top: 115px;
-    margin-right: 50px;
+    margin-top: 100px;
 }
 .button:hover{
     color: white;
@@ -67,6 +70,16 @@ flex:1;
        flex-wrap: wrap;
        flex-direction: column;
    }
+   .header{
+       flex-direction: column;
+   }
+   .businessLogo {
+   height: 0.8in;
+   }
+   .button {
+   margin: 10px;
+   }
+
 }
 
 

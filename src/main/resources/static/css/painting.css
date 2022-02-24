@@ -63,9 +63,18 @@
     .reviews{
         flex-direction: column;
     }
-}
+      .image{
+        height: 2in;
+    }
+    footer{
+        flex-direction: column;
+    }
+  }
 @media screen and (max-width: 900px){
-  .image{
+  .reviews{
+      flex-direction: column;
+  }
+    .image{
       height: 3in;
   }
 }
