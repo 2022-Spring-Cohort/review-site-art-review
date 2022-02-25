@@ -1,7 +1,4 @@
-.hash1{
-    height: 8in;
-}
-.hashtag{ 
+.hashtag{
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;

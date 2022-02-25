@@ -2,6 +2,7 @@ package org.wecancoeit.reviews.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -14,9 +15,9 @@ public class Hashtag {
     @ManyToMany
     private Collection<Painting> paintings;
 
-    public Hashtag(String hashtag) {
+    public Hashtag(String hashtag, Painting...paintings) {
         this.hashtag = hashtag;
-        this.paintings = new ArrayList<>();
+        this.paintings = Arrays.asList(paintings);
     }
 
     public Hashtag() {

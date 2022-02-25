@@ -1,11 +1,14 @@
 package org.wecancoeit.reviews;
 
+import org.aspectj.weaver.patterns.HasThisTypePatternTriedToSneakInSomeGenericOrParameterizedTypePatternMatchingStuffAnywhereVisitor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancoeit.reviews.entities.Artist;
+import org.wecancoeit.reviews.entities.Hashtag;
 import org.wecancoeit.reviews.entities.Painting;
 import org.wecancoeit.reviews.repos.ArtistRepository;
+import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.PaintingRepository;
 
 import java.awt.*;
@@ -17,6 +20,8 @@ public class Populator implements CommandLineRunner {
 
     @Autowired
     private PaintingRepository paintingRepo;
+    @Autowired
+    private HashtagRepository hashtagRepo;
 
 
     @Override
@@ -232,6 +237,118 @@ public class Populator implements CommandLineRunner {
                         "a young woman and her younger sister seated outdoors with a small basket containing balls of wool. " +
                         "Over the railings of the terrace one can see shrubbery and foliage with the River Seine behind it. ",artist5);
         paintingRepo.save(painting25);
+
+        Hashtag animal = new Hashtag("#animal", painting7, painting22, painting23, painting24, painting25);
+        hashtagRepo.save(animal);
+
+        Hashtag blue = new Hashtag("#Blue", painting1, painting2, painting3, painting4, painting5, painting6,
+                painting7, painting8, painting9, painting10, painting14, painting17, painting18, painting19,painting20,
+                painting21, painting22, painting23, painting24, painting25);
+        hashtagRepo.save(blue);
+
+        Hashtag boat = new Hashtag("#boat", painting3, painting4, painting6,painting20, painting22  );
+        hashtagRepo.save(boat);
+
+        Hashtag bridge = new Hashtag("#bridge", painting1);
+        hashtagRepo.save(bridge);
+
+        Hashtag canal = new Hashtag("#canal", painting6);
+        hashtagRepo.save(canal);
+
+        Hashtag dance = new Hashtag("#dance", painting9, painting21);
+        hashtagRepo.save(dance);
+
+        Hashtag flag = new Hashtag("#flag", painting4, painting8);
+        hashtagRepo.save(flag);
+
+        Hashtag flowers = new Hashtag("#flowers", painting1, painting2, painting4, painting5, painting7,
+                painting9, painting10, painting11, painting22, painting25);
+        hashtagRepo.save(flowers);
+
+        Hashtag france = new Hashtag("#France", painting1, painting2, painting3, painting4, painting5, painting7,
+                painting8, painting9, painting10, painting11, painting12, painting17, painting18, painting19, painting20,
+                painting21, painting22, painting24, painting25);
+        hashtagRepo.save(france);
+
+        Hashtag garden = new Hashtag("#garden", painting1, painting2, painting4, painting10);
+        hashtagRepo.save(garden);
+
+        Hashtag girl = new Hashtag("#girl", painting4, painting5, painting7, painting9, painting21, painting22,
+                painting24, painting25);
+        hashtagRepo.save(girl);
+
+        Hashtag green = new Hashtag("#green", painting1, painting2, painting4, painting5, painting7, painting8,
+                painting9, painting10, painting11, painting12, painting14, painting15, painting17, painting18, painting19,
+                painting20, painting21, painting22, painting24, painting25);
+        hashtagRepo.save(green);
+
+        Hashtag hat = new Hashtag("#hat", painting4, painting5, painting6, painting7, painting9, painting21,
+                painting22, painting24, painting25);
+        hashtagRepo.save(hat);
+
+        Hashtag house = new Hashtag("#house", painting2, painting5, painting6, painting8, painting10, painting12,
+                painting17, painting18, painting19, painting20, painting24);
+        hashtagRepo.save(house);
+
+        Hashtag italy = new Hashtag("#Italy", painting6, painting23);
+        hashtagRepo.save(italy);
+
+        Hashtag landscape = new Hashtag("#landscape", painting1, painting5, painting10, painting12, painting17, painting18, painting19, painting20);
+        hashtagRepo.save(landscape);
+
+        Hashtag marseilles = new Hashtag("#Marseilles", painting20);
+        hashtagRepo.save(marseilles);
+
+        Hashtag nature = new Hashtag("#nature", painting1, painting2, painting4, painting5, painting11, painting12, painting17, painting18, painting19, painting25);
+        hashtagRepo.save(nature);
+
+        Hashtag nude = new Hashtag("#nude", painting13, painting15);
+        hashtagRepo.save(nude);
+
+        Hashtag party = new Hashtag("#party", painting4, painting9, painting21, painting22);
+        hashtagRepo.save(party);
+
+        Hashtag piazza = new Hashtag("#piazza", painting23);
+        hashtagRepo.save(piazza);
+
+        Hashtag poppies = new Hashtag("#poppies", painting5);
+        hashtagRepo.save(poppies);
+
+        Hashtag red = new Hashtag("#red", painting2, painting3, painting4, painting5, painting8, painting10, painting18, painting25);
+        hashtagRepo.save(red);
+
+        Hashtag sister = new Hashtag("#sister", painting25);
+        hashtagRepo.save(sister);
+
+        Hashtag skulls = new Hashtag("#skuls", painting16);
+        hashtagRepo.save(skulls);
+
+        Hashtag smoke = new Hashtag("#smoke", painting3, painting4, painting7, painting9, painting20);
+        hashtagRepo.save(smoke);
+
+        Hashtag train = new Hashtag("#train", painting20);
+        hashtagRepo.save(train);
+
+        Hashtag stilllife = new Hashtag("#still life", painting11, painting13, painting14, painting15, painting16);
+        hashtagRepo.save(stilllife);
+
+        Hashtag street = new Hashtag("#street", painting6, painting7, painting8, painting12 ,painting19, painting21, painting23, painting24);
+        hashtagRepo.save(street);
+
+        Hashtag studio = new Hashtag("#sutdio", painting9, painting11, painting13, painting14, painting15, painting16);
+        hashtagRepo.save(studio);
+
+        Hashtag sunset = new Hashtag("#sunset", painting3);
+        hashtagRepo.save(sunset);
+
+        Hashtag tree = new Hashtag("#tree", painting1, painting2, painting5, painting7, painting10, painting12, painting17, painting18, painting19, painting20, painting21, painting24, painting25);
+        hashtagRepo.save(tree);
+
+        Hashtag venice = new Hashtag("#Venice", painting6, painting23);
+        hashtagRepo.save(venice);
+
+        Hashtag water = new Hashtag("#water", painting1, painting3, painting4, painting6, painting18, painting20, painting22);
+        hashtagRepo.save(water);
 
     }
 
