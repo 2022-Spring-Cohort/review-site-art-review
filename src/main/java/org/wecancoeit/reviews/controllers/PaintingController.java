@@ -80,8 +80,8 @@ public class PaintingController {
             }
         }
         else {
-            Hashtag hash = new Hashtag(tempHashtag);
-            hash.setPainting(painting);
+            Hashtag hash = new Hashtag(tempHashtag, painting);
+           // hash.setPainting(painting);
             hashtagRepo.save(hash);
         }
         model.addAttribute("hashtag",tempHashtag);
