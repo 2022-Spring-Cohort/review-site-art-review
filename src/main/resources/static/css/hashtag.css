@@ -18,7 +18,7 @@
     flex: 1;
 }
 .painting{
-   height: 3in;
+   height: 2in;
    border-radius: 10px;
    display: block;
    margin-left: auto;
@@ -29,7 +29,16 @@
     text-align: center;
 }
 
-
+@media screen and (max-width: 700px){
+    .hashtag{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .paint{
+        width: 98%;
+        margin-left: -15px;
+    } 
+}
 
 
 

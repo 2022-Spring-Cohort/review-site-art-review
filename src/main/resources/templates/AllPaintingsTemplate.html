@@ -5,23 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/allpaintings.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/allpaintings.css">
     <title>Paintings</title>
 </head>
 
 <body>
     <div class="container">
-        <div th:replace="fragments.html::header">
-<!--            <div class="logo">-->
-<!--                <a th:href="'/'"><img class="businessLogo" src="/images/businesslogo.png"></a>-->
-<!--            </div>-->
-<!--            <div class="buttons">-->
-<!--                <a th:href="'/'"><button class="button button1">Artists</button></a>-->
-<!--                <a th:href="'/all-paintings'"><button class="button button2">Paintings</button></a>-->
-<!--                <a th:href="'/all-hashtags'"><button class=" button button3">Hashtags</button></a>-->
-<!--            </div>-->
-        </div>
+        <div th:replace="fragments.html::header"></div>
 
         <div class="main">
             <ul class="paintingscontainer">
@@ -32,9 +23,7 @@
             </ul>
         </div>
 
-        <div th:replace="fragments.html::footer">
-<!--            <h3>© Path of Art, WCCI 2022</h3>-->
-        </div>
+        <div th:replace="fragments.html::footer"></div>
     </div>
 </body>
 
