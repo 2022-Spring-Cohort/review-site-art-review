@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Art Review</title>
+</head>
+
+<body>
+    <div class="container">
+        <div th:replace="fragments.html::header"></div>
+
+        <div class="main">
+            <ul class="painterscontainer">
+                <li class="painter" th:each ="artist: ${artists}">
+                    <h3 class="name" th:text = "${artist.name}">Claude Monet</h3>
+                    <a th:href="'/artists/' + ${artist.id}"><img class="portrait" th:src="${artist.imgUrl}"
+                        th:alt=" 'Photo of: ' + ${artist.name}">
+                    </a>
+                    <h3 class="name" th:text="${artist.details}"></h3>
+                </li>
+            </ul>
+        </div>
+
+        <div th:replace="fragments.html::footer"></div>
+    </div>
+</body>
+
+</html>

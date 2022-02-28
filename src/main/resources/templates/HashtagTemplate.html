@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/hashtag.css">
+    <title>Arts</title>
+</head>
+
+<body>
+    <div class="container">
+        <div th:replace="fragments.html::header"></div>
+
+        <div class="main hash1">
+            <ul class="hashtag">
+                <li th:each="painting: ${hashtag.paintings}" class="paint">
+                    <h3 class="name" th:text="${painting.title}"></h3>
+                    <a th:href="'/paintings/' + ${painting.id}"><img class="painting"
+                        th:src="${painting.imgUrl}" th:alt=" 'image of ' +  ${painting.title} + ' by ' + ${painting.artist.name}">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div th:replace="fragments.html::footer"></div>
+    </div>
+
+</body>
+
+</html>

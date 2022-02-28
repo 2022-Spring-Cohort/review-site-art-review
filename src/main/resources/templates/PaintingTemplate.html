@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/painting.css">
+    <title>Painting</title>
+</head>
+
+<body>
+    <div class="container">
+        <div th:replace="fragments.html::header"></div>
+
+        <div class="main">
+            <h1 class="reviewtitle">Review</h1>
+            <div class="titleAndRating">
+                <h2 class="title" th:text="${painting.title}"></h2>
+                <h3 class="avgRating" th:if="${painting.averageRating > 0}" th:text="'Avg rating: ' + ${painting.averageRating}"></h3>
+            </div>
+            <div class="reviews">
+                <img class="image" th:src="${painting.imgUrl}"
+                     th:alt="${painting.title}">
+                <ul class="reviewinginfo">
+                    <li class="reviewForms">
+                        <form th:action="'/paintings/' +${painting.id}" method = "POST">
+                            <label class="name" for="name" >Full Name:</label><br>
+                            <input required type="text" id="name" name="name" placeholder="John Doe"><br>
+                            <label class="review" for="review">Enter Comment Below:</label><br>
+                            <textarea required id="review" name="comment" rows="4" cols="50"></textarea><br>
+                            <label class="rating" for="review">Rate the painting:</label><br>
+                            <input required type="number" id="rating" name="rating"><br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </li>
+                    <li class="comments">
+                        <div class="singleComment" th:each="review: ${painting.reviews}" >
+                            <p class="reviewName" th:text="${review.name} + ' ' + ' [' + ${review.rating} + ']'" ></p>
+                            <p class="reviewComment" th:text=" '- ' + ${review.comment}"></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <form class="hashtagInput" th:action="'/paintings/hashtags/' +${painting.id}" method = "POST">
+                <label class="input" for="hashtag">Enter Hashtag: </label>
+                <input class="input" id="hashtag" name="hashtag" placeholder="#Picaso"><br>
+                <input class="input submit" type="submit" value="Submit">
+            </form>
+            <div class="hash" th:each="hashtag: ${painting.hashtags}">
+                <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.hashtag}"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<div th:fragment="header"  class="header" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="logo">
+        <a th:href="'/'"><img class="businessLogo" src="/images/PathOfArt.png"></a>
+    </div>
+    <div class="buttons">
+        <a th:href="'/'"><button class="button button1">Artists</button></a>
+        <a th:href="'/all-paintings'"><button class="button button2">Paintings</button></a>
+        <a th:href="'/all-hashtags'"><button class=" button button3">Hashtags</button></a>
+    </div>
+</div>
+
+<div th:fragment="footer" class="footer">
+    <h3> © Path of Art, WCCI 2022</h3>
+</div>
+
