@@ -10,6 +10,7 @@ import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.PaintingRepository;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -81,7 +82,6 @@ public class PaintingController {
         }
         else {
             Hashtag hash = new Hashtag(tempHashtag, painting);
-           // hash.setPainting(painting);
             hashtagRepo.save(hash);
         }
         model.addAttribute("hashtag",tempHashtag);
@@ -102,15 +102,15 @@ public class PaintingController {
             overallRating += review.getRating();
             avgRating = overallRating / addRatingCount;
         }
-        painting.setAverageRating(avgRating);
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        float rate = Float.valueOf(decimalFormat.format(avgRating));
+        painting.setAverageRating(rate);
         painting.setRatingCount(addRatingCount);
         painting.setOverallRating(overallRating);
         paintingRepo.save(painting);
     }
 
     private String checkHashTag(String hashtag) {
-        List<String> list = Arrays.asList(hashtag);
-        String result = String.join(",", list);
         String tempHashtag = "";
         if (hashtag.contains("#")) {
             tempHashtag = hashtag;

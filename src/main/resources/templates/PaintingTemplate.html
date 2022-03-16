@@ -18,7 +18,8 @@
             <h1 class="reviewtitle">Review</h1>
             <div class="titleAndRating">
                 <h2 class="title" th:text="${painting.title}"></h2>
-                <h3 class="avgRating" th:if="${painting.averageRating > 0}" th:text="'Avg rating: ' + ${painting.averageRating}"></h3>
+                <h3 class="avgRating" th:if="${painting.averageRating > 0}" th:text="'Rating: ' + ${#numbers.formatDecimal(painting.averageRating, 0, 'COMMA', 2, 'POINT')}"></h3>
+
             </div>
             <div class="reviews">
                 <img class="image" th:src="${painting.imgUrl}"
